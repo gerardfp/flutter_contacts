@@ -36,6 +36,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+
+    // cada vez que cambia el Modelo, se vuelve a ejecutar el build
     var selectedContacts = context.watch<SelectedContactsModel>();
 
     return Scaffold(
@@ -84,6 +86,10 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
+
+
+// Pantalla de seleccionar contactos
+
 class ContactsPage extends StatefulWidget {
   @override
   _ContactsPageState createState() => _ContactsPageState();
@@ -107,6 +113,7 @@ class _ContactsPageState extends State<ContactsPage> {
 
   @override
   Widget build(BuildContext context) {
+
     var selectedContacts = context.watch<SelectedContactsModel>();
 
     return Scaffold(
@@ -141,6 +148,10 @@ class _ContactsPageState extends State<ContactsPage> {
     );
   }
 }
+
+
+
+// MODEL, la clase donde se guardan los contactos seleccionados
 
 class SelectedContactsModel extends ChangeNotifier {
   final _selectedContacts = {};
